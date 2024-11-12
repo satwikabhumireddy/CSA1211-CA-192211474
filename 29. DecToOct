@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    long decimal, quotient;
+    int octalnum[100], i = 0;
+    // Input the decimal number
+    printf("Enter the decimal number: ");
+    scanf("%ld", &decimal);
+    quotient = decimal;
+    // Convert decimal to octal
+    while (quotient != 0) {
+        octalnum[i++] = quotient % 8;
+        quotient = quotient / 8;
+    }
+    // Print the result in reverse order
+    printf("Equivalent octal value of decimal number %ld is: ", decimal);
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", octalnum[j]);
+    }
+    printf("\n");
+    return 0;
+}
